@@ -1,0 +1,850 @@
+body {
+  font-family: 'Lato', sans-serif !important;
+}
+
+.sidebar-header {
+  background-color: #000 !important;
+  display: flex;
+  justify-content: flex-start !important;
+  align-items: center;
+  padding: 10px !important;
+}
+.sidebar-brand {
+  text-decoration: none;
+  color: #fff !important;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.sidebar-brand span {
+  position: relative;
+  top: 6px;
+}
+
+.sidebar-dark {
+  background-color: #000 !important;
+}
+
+.sidebar-nav .nav-link {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+.sidebar-nav .nav-group-items .nav-link {
+  font-weight: 400 !important;
+}
+.sidebar-nav .nav-title {
+  margin-top: 0px !important;
+}
+
+.sidebar-nav .nav-link,
+.sidebar-nav .nav-title {
+  color: #ffffff !important;
+}
+.sidebar-nav .nav-link .nav-icon .nav-icon-bullet {
+  background: #ffffff !important ;
+}
+.sidebar-nav .nav-group-toggle::after {
+  background: #ffffff !important ;
+}
+
+.sidebar-nav svg.nav-icon {
+  color: #ffffff !important;
+}
+.sidebar-nav .nav-group.show > .nav-group-toggle::after {
+  background: #fff !important;
+}
+
+.sidebar-footer {
+  display: none !important;
+}
+
+.sidebar-nav .nav-link.active,
+.sidebar-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+}
+.sidebar-nav .nav-link.active .nav-icon,
+.sidebar-nav .nav-link:hover .nav-icon {
+  color: #fff !important;
+}
+.header-breadcrumb .breadcrumb {
+  background-color: #fff !important;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding: 20px;
+  border-radius: 6px;
+}
+html[data-coreui-theme='dark'] .header-breadcrumb .breadcrumb {
+  background-color: transparent !important;
+  border: 1px solid #000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  border: 0px !important;
+}
+.breadcrumb-item.active {
+  color: #000 !important;
+}
+
+html[data-coreui-theme='dark'] .breadcrumb-item.active {
+  color: #fff !important;
+}
+
+/* login form  */
+
+.input-group,
+.react-select-2-live-region {
+  height: 50px !important;
+}
+
+.input-group-text {
+  padding: 0.375rem 1rem !important;
+}
+
+.black-btn {
+  background: #000 !important;
+  color: #fff !important;
+  padding: 10px 40px !important;
+  border-radius: 5px;
+  border: 0px !important;
+}
+.btn-link,
+a {
+  color: #000 !important;
+}
+html[data-coreui-theme='dark'] .btn-link,
+html[data-coreui-theme='dark'] a {
+  color: #fff !important;
+}
+
+/* ColorList.css */
+
+.color-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.color-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.color-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.edit-button,
+.delete-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  justify-content: center;
+  font-weight: 600;
+  min-width: 100px;
+}
+
+.edit-button {
+  background-color: black;
+  color: white !important;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #333;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+
+.event-detail-listing ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.event-detail-listing ul li {
+  padding: 10px 10px;
+}
+.event-detail-listing ul li:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.single-info-wrapper {
+  display: flex;
+}
+.single-info-label {
+  flex: 0 0 130px;
+}
+.single-info-label label {
+  font-weight: 500;
+  margin-bottom: 0px !important;
+}
+.single-info-desc {
+  flex: 1;
+}
+.single-info-desc label {
+  margin-bottom: 0px !important;
+}
+
+.card-balance-wrapper{
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.card-balance-content label{
+  font-size: 24px;
+  color: #fff !important;
+}
+.card-balance-content p{
+  font-size: 34px;
+  font-weight: 700;
+  color: #fff !important;
+}
+
+/* create color  */
+
+.color-create-card,
+.brand-create-card {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+html[data-coreui-theme='dark'] .color-create-card,
+html[data-coreui-theme='dark'] .brand-create-card {
+  background-color: transparent;
+  border: 1px solid #000;
+}
+html[data-coreui-theme='dark'] .form-control {
+  background-color: #2d384c !important;
+}
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.btn-active{
+  background-color: #4caf50 !important;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 50px;
+}
+#react-select-2-placeholder,
+#react-select-3-placeholder {
+  padding: 8px;
+  height: 42px;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.875em;
+  margin-top: 5px;
+}
+
+.submit-button {
+  /* width: 100%; */
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* brand  */
+
+/* src/components/BrandList.css */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+.form-control[type='file'] {
+  padding-top: 12px;
+}
+
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm,
+.container {
+  max-width: 100% !important;
+}
+
+/* dashboard  */
+.custom-card {
+  color: #333;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: none;
+}
+.custom-card h3 {
+  font-size: 35px;
+  padding-top: 10px;
+}
+.custom-card p {
+  font-weight: 500;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* .card-bg-blue {
+  background-color: #e7f3ff !important; 
+}
+
+.card-bg-green {
+  background-color: #e8f8e9 !important; 
+}
+
+.card-bg-yellow {
+  background-color: #fff8db !important; 
+}
+
+.card-bg-orange {
+  background-color: #fff3e0 !important;
+}
+
+.card-bg-red {
+  background-color: #ffe8e8 !important; 
+} */
+
+.custom-card {
+  border-radius: 12px;
+  padding: 1.5rem 0.5rem;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.react-select__value-container {
+  height: 45px !important;
+}
+.driver-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the Passenger Cards */
+.passenger-card,
+.driver-card .card-footer {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ffe8e8 !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.passenger-card-header {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid #000;
+  border-radius: 50%;
+  object-position: top;
+}
+
+.no-image {
+  width: 150px;
+  height: 150px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  display: flex;
+
+  border: 2px solid #ddd;
+  color: #aaa;
+  font-size: 12px;
+}
+
+.status-active {
+  color: green;
+  font-weight: bold;
+}
+
+.status-inactive {
+  color: red;
+  font-weight: bold;
+}
+
+/* Action Buttons (Edit/Delete) */
+.action-button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #b52a36;
+}
+
+/* Add Passenger Button */
+.add-passenger-btn {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Switch Style */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+  text-transform: capitalize;
+}
+
+.card-body p {
+  margin-bottom: 0px;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.pagination-btn:disabled {
+  background-color: #6f6d6d;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #6f6d6d;
+}
+.pagination-btn {
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #000;
+  padding: 5px 10px !important;
+}
+
+input[type='checkbox'] {
+  width: 15px;
+  height: 15px;
+}
+
+.pagination-btn svg {
+  font-size: 12px !important;
+}
+
+.react-tel-input .form-control {
+  width: 100% !important;
+  border: none !important;
+}
+.react-tel-input .form-control:focus {
+  box-shadow: none !important;
+}
+
+.react-tel-input .flag-dropdown {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  background-color: transparent !important;
+  border: 0px !important;
+  border-radius: 3px 0 0 3px;
+}
+
+input:focus,
+select:focus,
+.form-control:focus {
+  box-shadow: none !important;
+  border: 1px solid #000 !important;
+}
+html[data-coreui-theme='dark'] .css-13cymwt-control {
+  background-color: #2d384c !important;
+  border-color: #2d384c;
+  box-shadow: none !important;
+}
+html[data-coreui-theme='dark'] .css-t3ipsp-control {
+  background-color: #2d384c !important;
+  border-color: #2d384c !important;
+  box-shadow: none !important;
+}
+.css-1nmqiq5-menu li div {
+  background-color: #2d384c !important;
+  background: #2d384c !important;
+}
+/* input, textarea, select, .css-13cymwt-control,.css-1xalct5-control,.css-spxu-control, .form-control{
+  background-color: red !important;
+} */
+.css-13cymwt-control,
+.form-control {
+  height: 48px !important;
+}
+
+.simplebar-content {
+  line-height: 30px !important;
+}
+.sidebar-nav .nav-group .nav-group-items {
+  margin-bottom: 10px !important;
+  margin-top: 10px !important;
+}
+.sidebar {
+  width: 18rem !important;
+}
+.single-permission-wrapper {
+  display: flex;
+  width: 100%;
+  /* justify-content: space-between; */
+  gap: 20px;
+  flex-wrap: wrap;
+  border-bottom:1px solid rgba(255, 255, 255, 0.2);
+  padding: 16px 0px;
+  margin-bottom: 0px;
+  align-items: center;
+}
+.single-permission-wrapper:last-child{
+  border-bottom:unset
+}
+html[data-coreui-theme='light'] .single-permission-wrapper{
+  border-bottom:1px solid rgba(0, 0, 0, 0.2);
+} 
+html[data-coreui-theme='light'] .single-permission-wrapper:last-child{
+  border-bottom:unset
+} 
+.permission-title {
+  flex: 0 0 150px;
+  padding-left: 10px;
+}
+.permission-title h5 {
+  font-size: 18px;
+  font-weight: 700;
+}
+.permission-select-all {
+  flex: 0 0 100px;
+}
+.permission-select-all label {
+  font-size: 16px;
+  margin-left: 5px;
+  position: relative;
+  top: -1px;
+}
+.role-checkbox-wrapper {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+.role-checkbox-wrapper label label {
+  font-size: 15px;
+  margin-left: 5px;
+  position: relative;
+  top: -1px;
+  font-weight: 500;
+}
+.role-checkbox-wrapper label {
+  flex: 1 1 150px;
+}
+
+@media (min-width: 992px) {
+  .sidebar:not(.hide):not(.sidebar-narrow):not(.sidebar-narrow-unfoldable:not(:hover)):not(
+      .sidebar-narrow-unfoldable
+    ):not(.sidebar-overlaid):not(.sidebar-end)
+    ~ * {
+    --cui-sidebar-occupy-start: 18rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .sidebar.hide:not(.sidebar-end) {
+    margin-left: calc(-1 * 18rem) !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .sidebar:not(.sidebar-end):not(.show) {
+    margin-left: calc(-1 * 18rem) !important;
+  }
+}
+
+.btn-secondary {
+  --cui-btn-color: #fff;
+  --cui-btn-bg: #6f6d6d !important;
+  --cui-btn-border-color: #6f6d6d !important;
+}
+
+.sidebar-nav .nav-group-toggle {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+
+.sidebar-nav .nav-group.show .nav-group-toggle {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+/* 
+.css-113d811-MuiFormLabel-root-MuiInputLabel-root.Mui-focused{
+  color: red !important;
+
+} */
+
+.css-113d811-MuiFormLabel-root-MuiInputLabel-root.Mui-error {
+  display: none;
+  color: #000 !important;
+}
+.css-umzx0k-MuiClock-pin,
+.css-pncb2q-MuiClockPointer-root,
+.css-f53ilk-MuiClockPointer-thumb {
+  background-color: #000 !important;
+}
+.css-1fiopb0-MuiClockPointer-thumb,
+.css-f53ilk-MuiClockPointer-thumb {
+  border: 16px solid #000 !important;
+}
+.css-1588512-MuiButtonBase-root-MuiButton-root {
+  color: #000 !important;
+}
+
+.form-group .MuiOutlinedInput-notchedOutline {
+  border-width: 0px !important;
+  border-radius: 10px;
+}
+label[data-shrink='false']
+  + .MuiInputBase-formControl
+  .css-1dune0f-MuiInputBase-input-MuiOutlinedInput-input {
+  height: 12px !important;
+  width: 100% !important;
+}
+
+.form-group.MuiInputBase-input {
+  border-width: 0px !important;
+  padding: 0px !important;
+  color: var(--colors-black) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  border-radius: 10px !important;
+}
+
+.css-19qnlrw-MuiFormLabel-root-MuiInputLabel-root {
+  top: 3px !important;
+  left: 4px !important;
+  line-height: 14px !important;
+  font-size: 14px !important;
+  color: #626262 !important;
+  font-weight: 400 !important;
+  /* display: none !important;
+  opacity: 0 !important; */
+}
+
+.css-113d811-MuiFormLabel-root-MuiInputLabel-root {
+  display: none !important;
+}
+.css-jupps9-MuiInputBase-root-MuiOutlinedInput-root {
+  padding-right: 0px !important;
+}
+.css-1dune0f-MuiInputBase-input-MuiOutlinedInput-input {
+  height: 12px !important;
+  border-radius: 5px !important;
+  border: 1px solid #dbdfe6 !important;
+}
+
+.form-control {
+  margin-top: 0px !important;
+}
+
+label {
+  margin-bottom: 10px !important;
+}
+
+.simplebar-mask {
+  top: 20px !important;
+}
+
+.table-striped tr td,
+.table-striped tr th {
+  height: 60px; /* Set consistent row height */
+}
+
+.file-preview {
+  position: relative;
+  display: inline-block;
+}
+
+.file-preview img,
+.file-placeholder {
+  max-width: 100px;
+  height: 100px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa; /* Light grey background for placeholder */
+  color: #6c757d; /* Grey color for icons and text */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay with some transparency */
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.download-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  color: #fff; /* White color for better visibility on dark overlay */
+}
+
+.file-preview:hover .overlay,
+.file-preview:hover .download-icon {
+  opacity: 1;
+}
+
+.file-placeholder {
+  font-size: 40px; /* Increase size for better visibility */
+}
+
+.table-striped tr td,
+.table-striped tr th {
+  height: unset;
+}
+
+.form-check-input:checked {
+  background-color: #4caf50 !important;
+  border-color: #4caf50 !important;
+}
