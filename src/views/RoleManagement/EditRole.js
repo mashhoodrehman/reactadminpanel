@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import RoleForm from './RoleForm'
+import RoleForm from './roleForm'
 
 const EditRole = () => {
   const { id } = useParams()
