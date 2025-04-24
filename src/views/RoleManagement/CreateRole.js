@@ -1,5 +1,5 @@
 import React from 'react'
-import RoleForm from './RoleForm'
+import RoleForm from './roleForm'
 
 const CreateRole = () => {
   return <RoleForm isEdit={false} />
