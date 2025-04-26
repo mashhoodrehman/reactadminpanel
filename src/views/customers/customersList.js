@@ -1,45 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { getPackagesAPI, deletePackageAPI } from '../../services/packageService';
+import { getCustomersAPI } from '../../services/customerService'; // new service file for customers
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { FaEdit, FaTrash } from 'react-icons/fa';
 
-const PackageList = () => {
-  const [packages, setPackages] = useState([]);
+const CustomerList = () => {
+  const [customers, setCustomers] = useState([]);
   const navigate = useNavigate();
 
-  const fetchPackages = async () => {
+  const fetchCustomers = async () => {
     try {
-      const res = await getPackagesAPI();
-      setPackages(res.data || []);
+      const res = await getCustomersAPI();
+      setCustomers(res.data || []);
     } catch (err) {
-      toast.error(err.message || 'Failed to load packages');
-    }
-  };
-
-  const handleDelete = async (id) => {
-    if (!window.confirm('Are you sure you want to delete this package?')) return;
-
-    try {
-      await deletePackageAPI(id);
-      toast.success('Package deleted successfully');
-      fetchPackages();
-    } catch (err) {
-      toast.error(err.message || 'Failed to delete package');
+      toast.error(err.message || 'Failed to load customers');
     }
   };
 
   useEffect(() => {
-    fetchPackages();
+    fetchCustomers();
   }, []);
 
   return (
-    <div className="package-list">
+    <div className="customer-list">
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h4 className="mb-0">Customers List</h4>
-        <button className="btn btn-primary" onClick={() => navigate('/admin/package-create')}>
+        {/* Optional create button */}
+        {/* <button className="btn btn-primary" onClick={() => navigate('/admin/customer-create')}>
           + Create Customer
-        </button>
+        </button> */}
       </div>
 
       <table className="table table-striped table-bordered">
@@ -48,29 +36,36 @@ const PackageList = () => {
           <th>#</th>
           <th>Name</th>
           <th>Phone</th>
-          <th>Actions</th>
+          <th>Subscribed</th>
+          <th>Subscription Ends</th>
         </tr>
         </thead>
         <tbody>
-        {packages.length > 0 ? (
-          packages.map((pkg, index) => (
-            <tr key={pkg.id}>
+        {customers.length > 0 ? (
+          customers.map((customer, index) => (
+            <tr key={customer.id}>
               <td>{index + 1}</td>
-              <td>{pkg.name}</td>
-              <td>{pkg.features?.length || 0}</td>
+              <td>{customer.name}</td>
+              <td>{customer.phone}</td>
               <td>
-                <button className="btn btn-sm btn-warning me-2" onClick={() => navigate(`/admin/package-edit/${pkg.id}`)}>
-                  <FaEdit /> Edit
-                </button>
-                <button className="btn btn-sm btn-danger" onClick={() => handleDelete(pkg.id)}>
-                  <FaTrash /> Delete
-                </button>
+                {customer.isSubscribed ? (
+                  <span className="badge bg-success">Active</span>
+                ) : (
+                  <span className="badge bg-danger">Inactive</span>
+                )}
+              </td>
+              <td>
+                {customer.subscriptionEndsAt
+                  ? new Date(customer.subscriptionEndsAt).toLocaleDateString()
+                  : 'N/A'}
               </td>
             </tr>
           ))
         ) : (
           <tr>
-            <td colSpan="6" className="text-center">No packages found</td>
+            <td colSpan="5" className="text-center">
+              No customers found
+            </td>
           </tr>
         )}
         </tbody>
@@ -79,4 +74,4 @@ const PackageList = () => {
   );
 };
 
-export default PackageList;
+export default CustomerList;

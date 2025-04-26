@@ -17,22 +17,24 @@ export const register = async (username, email, roleId, password, confirmPasswor
 
 // 🔄 updated to use phone instead of email
 export const login = async (country_code, phone, password) => {
-  console.log(password , 'sdfdsf')
-  try {
+
+  // try {
     const response = await api.post('/api/adminauth/login', {
       country_code,
       phone,
       password,
     });
-    const { token } = response.data;
-    localStorage.setItem('token', token);
+    console.log(response , 'sdfsdf')
+    // const { token } = response.data;
+    // localStorage.setItem('token', token);
     return response.data;
-  } catch (error) {
-    throw error.response ? error.response.data : new Error('Network Error');
-  }
+  // } catch (error) {
+  //   throw error.response ? error.response.data : new Error('Network Error');
+  // }
 }
 
 
 export const logout = () => {
   localStorage.removeItem('token')
 }
+0
