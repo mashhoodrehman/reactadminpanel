@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { toast } from 'react-toastify'
-import { getDashboardBalance } from '../../services/dashboardApiService'
+import { getDashboardStats } from '../../services/dashboardApiService'
 import { CCol, CRow } from '@coreui/react'
 
 const Dashboard = () => {
-  const [users, setUsers] = useState([])
-  const [balance, setBalance] = useState(null)
-  const [pagination, setPagination] = useState({ page: 1, total: 0, limit: 10 })
+  const [stats, setStats] = useState({ totalCustomers: 0, totalEvents: 0 })
 
   useEffect(() => {
     const userData = localStorage.getItem('user')
@@ -19,33 +17,26 @@ const Dashboard = () => {
       console.log('No User Data Found in Local Storage')
     }
 
-    if (user?.permissions?.length === 0) {
-      console.log('User has no permissions, fetching data...')
-      fetchUsers()
+    if (true) {
+      console.log('User has no permissions, fetching dashboard stats...')
+      fetchDashboardStats()
     } else {
       console.log('User has permissions, API call skipped.')
     }
   }, [])
 
-  const fetchUsers = async (page = 1) => {
+  const fetchDashboardStats = async () => {
     try {
-      const response = await getDashboardBalance(page, pagination.limit)
-      if (response?.result === 'success') {
-        setUsers(response?.data?.data || [])
-
-        setPagination({
-          page: Number(response?.data?.currentPage),
-          total: Number(response?.data?.total),
-          limit: Number(response?.data?.limit),
-        })
-
-        setBalance(response?.data?.balance?.data || '0.00')
-        toast.success(response?.message)
+      const response = await getDashboardStats()
+      console.log(response , 'response')
+      if (response) {
+        setStats(response.data)
+        toast.success(response.message || 'Dashboard stats loaded')
       } else {
-        toast.error(response?.message || 'Failed to load users')
+        toast.error(response.message || 'Failed to fetch dashboard stats')
       }
     } catch (error) {
-      toast.error(error?.message || 'Failed to load users')
+      toast.error(error.message || 'Failed to load dashboard stats')
     }
   }
 
@@ -54,8 +45,8 @@ const Dashboard = () => {
       <CCol lg={6}>
         <div className="card bg-primary text-white mb-4">
           <div className="card-body text-center">
-            <h5>Total Users</h5>
-            <h3>{pagination?.total || 0}</h3>
+            <h5>Total Customers</h5>
+            <h3>{stats.totalCustomers}</h3>
           </div>
         </div>
       </CCol>
@@ -64,7 +55,7 @@ const Dashboard = () => {
         <div className="card bg-success text-white mb-4">
           <div className="card-body text-center">
             <h5>Total Events</h5>
-            <h3>{users.length || 0}</h3> {/* Replace with actual event count if available */}
+            <h3>{stats.totalEvents}</h3>
           </div>
         </div>
       </CCol>

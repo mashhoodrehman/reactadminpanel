@@ -67,47 +67,78 @@ const EventList = () => {
         <>
           <table className="table table-bordered">
             <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Start</th>
-              <th>End</th>
-              <th>Tickets</th>
-              <th>Listings</th>
-              <th>Crowd</th>
-              <th>Status</th>
-            </tr>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Tickets</th>
+                <th>Listings</th>
+                <th>Crowd</th>
+                <th>Status</th>
+              </tr>
             </thead>
             <tbody>
-            {events.length ? (
-              events.map((event, i) => (
-                <tr key={event.id}>
-                  <td>{(page - 1) * 10 + i + 1}</td>
-                  <td>{event.name}</td>
-                  <td>{new Date(event.start_date).toLocaleString()}</td>
-                  <td>{new Date(event.end_date).toLocaleString()}</td>
-                  <td>{event.ticket_count}</td>
-                  <td>{event.listing_count}</td>
-                  <td>{event.crowd}</td>
-                  <td>
-                      <span className={`badge bg-${event.crowd_status}`}>
-                        {event.crowd_status}
-                      </span>
+              {events.length ? (
+                events.map((event, i) => (
+                  <tr key={event.id}>
+                    <td>{(page - 1) * 10 + i + 1}</td>
+                    <td>{event.name}</td>
+                    <td>
+                      {new Date(event.start_date).toLocaleString('en-US', {
+                        weekday: 'long', // e.g., "Wednesday"
+                        year: 'numeric', // e.g., "2025"
+                        month: 'long', // e.g., "April"
+                        day: 'numeric', // e.g., "30"
+                        hour: 'numeric', // e.g., "2"
+                        minute: '2-digit', // e.g., "15"
+                        hour12: true, // 12-hour format with AM/PM
+                      })}
+                    </td>
+
+                    <td> {new Date(event.end_date).toLocaleString('en-US', {
+                      weekday: 'long', // e.g., "Wednesday"
+                      year: 'numeric', // e.g., "2025"
+                      month: 'long', // e.g., "April"
+                      day: 'numeric', // e.g., "30"
+                      hour: 'numeric', // e.g., "2"
+                      minute: '2-digit', // e.g., "15"
+                      hour12: true, // 12-hour format with AM/PM
+                    })}</td>
+                    <td>{event.ticket_count}</td>
+                    <td>{event.listing_count}</td>
+                    <td>{event.crowd}</td>
+                    <td>
+                      <span className={`badge bg-${event.crowd_status}`}>{event.crowd_status}</span>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="8" className="text-center">
+                    No events found
                   </td>
                 </tr>
-              ))
-            ) : (
-              <tr>
-                <td colSpan="8" className="text-center">No events found</td>
-              </tr>
-            )}
+              )}
             </tbody>
           </table>
 
           {/* Custom Pagination */}
           <div className="d-flex justify-content-center align-items-center mt-3 flex-wrap gap-2">
-            <button className="btn btn-outline-secondary" disabled={page === 1} onClick={() => setPage(1)}>First</button>
-            <button className="btn btn-outline-secondary" disabled={page === 1} onClick={() => setPage(prev => prev - 1)}>Prev</button>
+            <button
+              className="btn btn-outline-secondary"
+              disabled={page === 1}
+              onClick={() => setPage(1)}
+            >
+              First
+            </button>
+            <button
+              className="btn btn-outline-secondary"
+              disabled={page === 1}
+              onClick={() => setPage((prev) => prev - 1)}
+            >
+              Prev
+            </button>
 
             {getPaginationRange().map((pageNumber) => (
               <button
@@ -119,13 +150,25 @@ const EventList = () => {
               </button>
             ))}
 
-            <button className="btn btn-outline-secondary" disabled={page === totalPages} onClick={() => setPage(prev => prev + 1)}>Next</button>
-            <button className="btn btn-outline-secondary" disabled={page === totalPages} onClick={() => setPage(totalPages)}>Last</button>
+            <button
+              className="btn btn-outline-secondary"
+              disabled={page === totalPages}
+              onClick={() => setPage((prev) => prev + 1)}
+            >
+              Next
+            </button>
+            <button
+              className="btn btn-outline-secondary"
+              disabled={page === totalPages}
+              onClick={() => setPage(totalPages)}
+            >
+              Last
+            </button>
           </div>
         </>
       )}
     </div>
-  );
+  )
 };
 
 export default EventList;

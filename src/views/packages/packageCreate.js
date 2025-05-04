@@ -80,6 +80,7 @@ const PackageCreate = () => {
                 <option value="day">Day</option>
                 <option value="week">Week</option>
                 <option value="month">Month</option>
+                <option value="yearly">Year</option>
               </select>
             </div>
           </CCol>

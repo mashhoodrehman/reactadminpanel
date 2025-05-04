@@ -1,9 +1,9 @@
 import api from './baseApi'
 
-export const getDashboardBalance = async (page = 1, perPage = 10) => {
+export const getDashboardStats = async (page = 1, perPage = 10) => {
   try {
     const response = await api.get(
-      `/api/admin/get/admintransaction/detail?page=${page}&perPage=${perPage}`,
+      `/api/admin/dashboard-stats`,
     )
     return response?.data || null
   } catch (error) {
