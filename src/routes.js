@@ -17,7 +17,9 @@ const PackageEdit = React.lazy(() => import('./views/packages/packageEdit'))
 const customersList = React.lazy(() => import('./views/customers/customersList'))
 const customerCreate = React.lazy(() => import('./views/customers/customerCreate'))
 const customerEdit = React.lazy(() => import('./views/customers/customerEdit'))
-const eventsList = React.lazy(() => import('./views/events/eventLists'))
+const eventsList = React.lazy(() => import('./views/pages/events/index'))
+const eventsCreate = React.lazy(() => import('./views/pages/events/create'))
+const eventsEdit = React.lazy(() => import('./views/pages/events/[id]/edit'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -44,6 +46,8 @@ const routes = [
   { path: '/admin/customers-edit/:id', name: 'Edit Customer', element: customerEdit },
 
   { path: '/admin/events/list', name: 'List Events', element: eventsList },
+  { path: '/admin/events/create', name: 'Create Events', element: eventsCreate },
+  { path: '/admin/events/:id/edit', name: 'Create Events', element: eventsEdit },
 ]
 
 export default routes

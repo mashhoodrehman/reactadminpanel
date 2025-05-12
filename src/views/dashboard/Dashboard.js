@@ -27,8 +27,7 @@ const Dashboard = () => {
 
   const fetchDashboardStats = async () => {
     try {
-      const response = await getDashboardStats()
-      console.log(response , 'response')
+      const response = await getDashboardStats();
       if (response) {
         setStats(response.data)
         toast.success(response.message || 'Dashboard stats loaded')

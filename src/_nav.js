@@ -76,6 +76,11 @@ const _nav = [
         component: CNavItem,
         name: 'Events List',
         to: '/admin/events/list',
+      },
+      {
+        component: CNavItem,
+        name: 'Events Create',
+        to: '/admin/events/create',
       }
     ],
   },
