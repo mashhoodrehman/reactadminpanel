@@ -86,25 +86,31 @@ const EventList = () => {
                     <td>{event.name}</td>
                     <td>
                       {new Date(event.start_date).toLocaleString('en-US', {
-                        weekday: 'long', // e.g., "Wednesday"
-                        year: 'numeric', // e.g., "2025"
-                        month: 'long', // e.g., "April"
-                        day: 'numeric', // e.g., "30"
-                        hour: 'numeric', // e.g., "2"
-                        minute: '2-digit', // e.g., "15"
-                        hour12: true, // 12-hour format with AM/PM
+                        timeZone: 'UTC', // interpret date as UTC (optional)
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        hour: 'numeric',
+                        minute: '2-digit',
+                        hour12: true,
                       })}
                     </td>
 
-                    <td> {new Date(event.end_date).toLocaleString('en-US', {
-                      weekday: 'long', // e.g., "Wednesday"
-                      year: 'numeric', // e.g., "2025"
-                      month: 'long', // e.g., "April"
-                      day: 'numeric', // e.g., "30"
-                      hour: 'numeric', // e.g., "2"
-                      minute: '2-digit', // e.g., "15"
-                      hour12: true, // 12-hour format with AM/PM
-                    })}</td>
+
+                    <td>
+                      {new Date(event.end_date).toLocaleString('en-US', {
+                        timeZone: 'UTC', // interpret date as UTC (optional)
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        hour: 'numeric',
+                        minute: '2-digit',
+                        hour12: true,
+                      })}
+                    </td>
+
                     <td>{event.ticket_count}</td>
                     <td>{event.listing_count}</td>
                     <td>{event.crowd}</td>
