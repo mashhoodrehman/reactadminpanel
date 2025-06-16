@@ -96,8 +96,6 @@ const EventList = () => {
                         hour12: true,
                       })}
                     </td>
-
-
                     <td>
                       {new Date(event.end_date).toLocaleString('en-US', {
                         timeZone: 'UTC', // interpret date as UTC (optional)
