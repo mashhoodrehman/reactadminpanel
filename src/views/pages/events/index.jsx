@@ -100,6 +100,7 @@ const EventList = () => {
                   <td>{(page - 1) * 10 + i + 1}</td>
                   <td>{event.name}</td>
                   <td>{new Date(event.start_date).toLocaleString('en-US', {
+                    timeZone: 'UTC',
                     weekday: 'long',
                     year: 'numeric',
                     month: 'long',
@@ -109,6 +110,7 @@ const EventList = () => {
                     hour12: true,
                   })}</td>
                   <td>{new Date(event.end_date).toLocaleString('en-US', {
+                    timeZone: 'UTC',
                     weekday: 'long',
                     year: 'numeric',
                     month: 'long',
